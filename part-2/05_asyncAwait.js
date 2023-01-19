@@ -9,12 +9,9 @@ const user2Path = path.join(__dirname, 'files/user2.json'); //user2.json파일�
 const readAllUsersAsyncAwait = async () => { //async함수 사용
   // TODO: async/await 키워드를 이용해 작성합니다
 
-  let arr = []; //객체가 담길 배열을 선언
-  let data1 = await getDataFromFilePromise(user1Path); //promise객체의 인자로 user1Path를 받아서 나온 결과를 리턴
-  arr.push(JSON.parse(data1));//결과값 문자열을 객체로 바꾸고 배열arr에 담기
-  let data2 = await getDataFromFilePromise(user2Path); //promise객체의 인자로 user2Path를 받아서 나온 결과를 리턴
-  arr.push(JSON.parse(data2));//결과값 문자열을 객체로 바꾸고 배열arr에 담기
-  return arr;
+  let data1 = JSON.parse(await getDataFromFilePromise(user1Path)); //promise객체의 인자로 user1Path를 받아서 나온 결과값 문자열을 객체로 바꾸기
+  let data2 = JSON.parse(await getDataFromFilePromise(user2Path)); //promise객체의 인자로 user2Path를 받아서 나온 결과값 문자열을 객체로 바꾸기
+  return [data1, data2];
 }
 
 readAllUsersAsyncAwait();

@@ -19,3 +19,11 @@ if (typeof window === 'undefined') {
 // async 키워드를 사용한 함수는 AsyncFunction의 인스턴스입니다
 // /data/latest 의 응답 내용과 /data/weather 응답 내용을 합쳐 새로운 객체로 리턴되어야 합니다
 //encountered a declaration exception
+
+/* 다른 풀이
+async function getNewsAndWeatherAsync() {
+  const {data : news} = await fetch(newURL).then((res) => res.json());
+  const weather = await fetch(weatherURL).then((res) => res.json());
+  return {new, weather};
+}
+*/

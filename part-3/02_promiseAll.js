@@ -28,3 +28,17 @@ if (typeof window === 'undefined') {
 //Promise 형태로 리턴되어야 합니다
 //Promise.all을 사용해서 풀어야 합니다
 ///data/latest 의 응답 내용과 /data/weather 응답 내용을 합쳐 새로운 객체로 리턴되어야 합니다
+
+/* 다른 풀이
+function getNewsAndWeatherAll() {
+  return Promose.all([fetch(newsURL), fetch(weatherURL)]).then(
+    ([res1, res2]) => {return Promise.all([res1.json(), res2.json()]).then(
+      ([{data:news}, weather]) => {
+        return {news, weather};
+      }
+    )
+    }
+  )
+
+}
+*/

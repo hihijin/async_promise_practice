@@ -33,3 +33,16 @@ let promiseOne = getDataFromFilePromise(user1Path);
 let promiseTwo = getDataFromFilePromise(user2Path);
 return Promise.all([ JSON.parse(promiseOne), JSON.parse(promiseTwo)]).then((datas) => {return datas});
 */
+
+/* 다른 풀이
+const readAllUsers = () => { 
+  return Promise.all([
+    getDataFromFilePromise(user1Path),
+    getDataFromFilePromise(user2Path)
+  ]).then([user1, user2]) => {
+    const user1Data = JSON.parse(user1);
+    const user2Data = JSON.parse(user2);
+    return [user1Data, user2Data];
+  }
+}
+*/

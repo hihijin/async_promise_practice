@@ -10,13 +10,13 @@ const readAllUsersChaining = () => {
   // TODO: 여러개의 Promise를 then으로 연결하여 작성합니다
   let arr = []; //객체가 담길 배열을 선언
   return getDataFromFilePromise(user1Path)//promise객체의 인자로 user1Path를 받아서 나온 결과를 리턴
-    .then((data) => { //user1Path의 결과데이터를 data로 선언
+    .then((data) => { //프로미스 객체를 리턴, 즉,data는 결과값
       arr.push(JSON.parse(data)) //문자열인 data를 객체로 바꾸고 배열arr에 넣어준다.
       return getDataFromFilePromise(user2Path)//promise객체의 인자로 user2Path를 받아서 나온 결과를 리턴
     })
-    .then((data2) => { //user2Path의 결과데이터를 data2로 선언
+    .then((data2) => { //프로미스 객체를 리턴, 즉,data2는 결과값
       arr.push(JSON.parse(data2)) //문자열인 data2를 객체로 바꾸고 배열arr에 넣어준다.
-      return arr
+      return arr;
     })
 };
 
