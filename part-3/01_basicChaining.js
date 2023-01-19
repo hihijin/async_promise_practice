@@ -1,3 +1,5 @@
+//실행하려면 터미널에서 npm run server:part-3 을 실행하고 specrunner.html 브라우저를 열면 확인가능
+
 const newsURL = 'http://localhost:4999/data/latestNews'; //news data가 있는 url
 const weatherURL = 'http://localhost:4999/data/weather'; //weather data가 있는 url
 

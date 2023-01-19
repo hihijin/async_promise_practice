@@ -1,3 +1,5 @@
+//실행하려면 따로 html파일은 없고 터미널에 npm run test:part-2 를 치면 test 결과 확인 가능
+
 const fs = require("fs");//"fs"(파일 시스템) 모듈을 불러옵니다
 //require : 다른 파일을 불러오는 방법
 
